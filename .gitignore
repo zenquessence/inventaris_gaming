@@ -1,0 +1,37 @@
+# PHP
+*.log
+.env
+.env.local
+.env.production
+
+# XAMPP/Server files
+Thumbs.db
+.DS_Store
+
+# Upload directories
+uploads/*
+!uploads/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (if using npm)
+node_modules/
+
+# Composer (if using)
+vendor/
+
+# Cache
+cache/
+*.cache
+
+# Config files with sensitive data
+config/local.php
+config/production.php
