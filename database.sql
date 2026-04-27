@@ -24,11 +24,11 @@ CREATE TABLE IF NOT EXISTS users (
 -- NOTE: Admin user is inserted by setup.php (needs PHP to generate the bcrypt hash).
 
 -- ------------------------------------------------------------
--- TABLE: aksesoris
+-- TABLE: barang
 -- ------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS aksesoris (
+CREATE TABLE IF NOT EXISTS barang (
     id             INT UNSIGNED      NOT NULL AUTO_INCREMENT,
-    nama_aksesoris VARCHAR(150)      NOT NULL,
+    nama_barang    VARCHAR(150)      NOT NULL,
     kategori       ENUM('Headset','Mouse','Keyboard','Controller',
                         'Mousepad','Webcam','Capture Card','Lainnya')
                                      NOT NULL DEFAULT 'Lainnya',
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS aksesoris (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Sample data (no images)
-INSERT INTO aksesoris (nama_aksesoris, kategori, merek, stok, harga, kondisi, deskripsi) VALUES
+INSERT INTO barang (nama_barang, kategori, merek, stok, harga, kondisi, deskripsi) VALUES
 ('Headset Gaming RGB Pro',  'Headset',    'HyperX',  10, 850000.00,  'Baru', 'Surround 7.1, mic noise-cancelling'),
 ('Mouse Optical 16000 DPI', 'Mouse',      'Logitech',  5, 450000.00, 'Baru', 'RGB, 11 tombol programmable'),
 ('Keyboard Mechanical TKL', 'Keyboard',   'Razer',     8, 1200000.00,'Baru', 'Switch Red, anti-ghosting'),

@@ -32,8 +32,6 @@ class DashboardController
             'SELECT COUNT(DISTINCT kategori) FROM barang'
         )->fetchColumn();
 
-        // Dummy — peminjaman table not built yet
-        $peminjamanAktif = 0;
 
         // ── Recent items (last 5) ───────────────────────────────
         $recentItems = $db->query(

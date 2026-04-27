@@ -14,7 +14,7 @@ $userInitial = strtoupper(mb_substr($_SESSION['nama_lengkap'] ?? 'U', 0, 1));
     <div class="sidebar-logo">
         <div class="logo-icon">🎮</div>
         <div class="logo-text">
-            GAMING INV
+            GAMING CLOUD
             <span>Inventaris Barang</span>
         </div>
     </div>
@@ -45,16 +45,6 @@ $userInitial = strtoupper(mb_substr($_SESSION['nama_lengkap'] ?? 'U', 0, 1));
             Data Barang
         </a>
 
-        <!-- Peminjaman (placeholder) -->
-        <a class="nav-link disabled" title="Coming Soon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
-                <rect x="9" y="3" width="6" height="4" rx="1"/>
-                <path d="M9 12h6M9 16h4"/>
-            </svg>
-            Peminjaman
-            <span class="nav-badge">Soon</span>
-        </a>
 
         <div class="nav-label" style="margin-top:.5rem;">Akun</div>
 

@@ -14,8 +14,8 @@ $safeTitle = htmlspecialchars($pageTitle ?? 'Dashboard', ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $safeTitle ?> — Inventaris Gaming</title>
-    <meta name="description" content="Sistem manajemen inventaris barang gaming.">
+    <title><?= $safeTitle ?> — Gaming Cloud</title>
+    <meta name="description" content="Sistem manajemen inventaris Gaming Cloud.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/inventaris/css/css/style.css">

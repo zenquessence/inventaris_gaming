@@ -3,7 +3,7 @@
     </div><!-- /.main-content -->
 </div><!-- /.app-layout -->
 
-<footer style="display:none"><!-- Inventaris Barang Gaming © <?= date('Y') ?> --></footer>
+<footer style="display:none"><!-- Gaming Cloud © <?= date('Y') ?> --></footer>
 
 </body>
 </html>

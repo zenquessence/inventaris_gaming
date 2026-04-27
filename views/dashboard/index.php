@@ -14,7 +14,7 @@ $namaUser = htmlspecialchars($_SESSION['nama_lengkap'] ?? 'Admin', ENT_QUOTES, '
 <div class="welcome-banner">
     <div>
         <div class="greeting"><?= $greeting ?>, <?= $namaUser ?>! 👋</div>
-        <div class="sub">Berikut ringkasan inventaris barang gaming hari ini.</div>
+        <div class="sub">Berikut ringkasan inventaris Gaming Cloud hari ini.</div>
     </div>
     <div class="emoji"><?= $emoji ?></div>
 </div>
@@ -36,12 +36,6 @@ $namaUser = htmlspecialchars($_SESSION['nama_lengkap'] ?? 'Admin', ENT_QUOTES, '
         <div class="stat-sub">Item dengan stok &lt; 5 unit</div>
     </div>
 
-    <div class="stat-card">
-        <div class="stat-icon blue">📋</div>
-        <div class="stat-value blue"><?= $e($peminjamanAktif) ?></div>
-        <div class="stat-label">Peminjaman Aktif</div>
-        <div class="stat-sub">Fitur segera hadir</div>
-    </div>
 
     <div class="stat-card">
         <div class="stat-icon green">💰</div>

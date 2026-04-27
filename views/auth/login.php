@@ -17,8 +17,8 @@ $csrf = htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — Inventaris Barang Gaming</title>
-    <meta name="description" content="Login ke sistem inventaris barang gaming.">
+    <title>Login — Gaming Cloud</title>
+    <meta name="description" content="Login ke sistem Gaming Cloud.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap"
@@ -309,25 +309,25 @@ $csrf = htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8');
 
         <div class="login-brand">
             <span class="icon">🎮</span>
-            <h1>GAMING INVENTARIS</h1>
-            <p>SISTEM MANAJEMEN BARANG GAMING</p>
+            <h1>GAMING CLOUD</h1>
+            <p>SISTEM MANAJEMEN CLOUD</p>
         </div>
 
         <div class="login-card">
             <h2 class="card-title">Selamat Datang</h2>
             <p class="card-sub">Masuk ke akun Anda untuk melanjutkan</p>
 
-                <?php if ($flash_success): ?>
+            <?php if ($flash_success): ?>
                 <div class="flash flash-success" role="alert">
                     ✓ <?= htmlspecialchars($flash_success, ENT_QUOTES, 'UTF-8') ?>
                 </div>
-                <?php endif; ?>
+            <?php endif; ?>
 
-                <?php if ($flash_error): ?>
+            <?php if ($flash_error): ?>
                 <div class="flash flash-error" role="alert">
                     ✗ <?= htmlspecialchars($flash_error, ENT_QUOTES, 'UTF-8') ?>
                 </div>
-                <?php endif; ?>
+            <?php endif; ?>
 
             <form action="index.php?page=login&action=proses" method="POST" novalidate>
                 <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
@@ -365,7 +365,7 @@ $csrf = htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8');
         </div>
 
         <p class="login-footer">
-            &copy; <?= date('Y') ?> Inventaris Barang Gaming &bull; Secure MVC PHP
+            &copy; <?= date('Y') ?> Gaming Cloud &bull; Secure MVC PHP
         </p>
     </div>
 

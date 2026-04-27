@@ -28,7 +28,7 @@ foreach ($cards as [$icon, $val, $label, $color]):
     <div class="card-header" style="justify-content:space-between;">
         <div style="display:flex;align-items:center;gap:.6rem;">
             <span style="font-size:1.2rem;">🎯</span>
-            <h2>Data Barang Gaming</h2>
+            <h2>Data Gaming Cloud</h2>
             <span style="font-size:.75rem;color:#64748b;">(<?= count($items) ?> item)</span>
         </div>
         <a href="index.php?page=barang&action=create" class="btn btn-primary">
