@@ -1,0 +1,64 @@
+name: Auto Deploy to XAMPP
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: mbstring, pdo, pdo_mysql
+        
+    - name: Create deployment package
+      run: |
+        mkdir deploy
+        cp -r config controllers models views css *.php deploy/
+        echo "Deployment package created"
+        
+    - name: Deploy to server (Webhook)
+      run: |
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"action":"deploy","commit":"${{ github.sha }}"}' \
+          "${{ secrets.DEPLOY_WEBHOOK_URL }}" || echo "Webhook failed - manual deploy needed"
+          
+    - name: Create sync script
+      run: |
+        cat > sync.php << 'EOF'
+        <?php
+        // Auto-sync script - place this in your web root
+        $repo_url = 'https://github.com/zenquessence/inventaris_gaming.git';
+        $target_dir = __DIR__;
+        
+        echo "Starting sync...\n";
+        
+        // Pull latest changes
+        $output = shell_exec("cd $target_dir && git pull origin main 2>&1");
+        echo "Git pull result: $output\n";
+        
+        // Clear any caches
+        if (function_exists('opcache_reset')) {
+            opcache_reset();
+            echo "OPcache cleared\n";
+        }
+        
+        echo "Sync completed at: " . date('Y-m-d H:i:s') . "\n";
+        ?>
+        EOF
+        
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: deploy-package
+        path: deploy/
+        retention-days: 7
